@@ -19,4 +19,4 @@ class savings(account):
         super().credit(amount * self.__interestRate)
 
     def __str__(self):
-        
+        return f"savings account balance={self.getBalance()} interestRate={self.__interestRate}"
