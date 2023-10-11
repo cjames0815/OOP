@@ -3,7 +3,7 @@ from account.account import *
 def main():
     # create an account object named a1 that has a balacne of $100
     a1 = account(100.0)
-    a2 = account()
+    #a2 = account()
     # a1 = account(100.0, 200.0, 300.0, 400.0)
     # a1 = account(-100.0) # a balance less than zero will result in our code raising a ValueError
 
@@ -88,11 +88,22 @@ def main():
     # display the sum of the balances in a1 and a2
     print("$%.2f" % account.sum(a1, a2))
 
-    # display the sum of the balances in a1 and a2
+    # display the sum of the balances in a1 and a3
     print("$%.2f" % account.sum(a1, a3))
 
+    #display the sum of the balances in a1 and s1
+    print("$%.2f" % account.sum(a1, s1))
 
+    # transfer $25 out of a1 and put it into a new account named a4
+    a4 = account.transfer(a1, 25.0)
+    #a4 = account.transfer(a1, -25.0) this line of code results in a ValueError
+    #a4 = account.transfer(a1, 2500.0)
+    #a4 = account.transfer(a3, 25.0) this line of code results in a ValueError 
+    #a4 = account.transfer(s1, 25.0)
 
+    # display the balance in a1 and a4
+    print("Balance in a1 $%.2f" % (a1.getBalance()))
+    print("Balance in a4 $%.2f" % (a4.getBalance()))
 
 if __name__ == "__main__":
     main()
